@@ -1,15 +1,19 @@
 # 个人主页（Personal Page）
 
-一个简洁、现代、零依赖的个人网站框架，用于对外展示**个人成果、项目、兴趣与合作**。
+一个简洁、现代、零依赖的**中英双语**个人网站框架，用于对外展示**个人成果、项目、经历、兴趣与合作**。
 纯静态 HTML/CSS/JS，无需构建步骤，可直接部署到 **GitHub Pages**（或任何静态托管服务）。
+
+- 🌐 **中英双语**：默认英文，导航栏一键切换中文（偏好记忆到 localStorage）
+- 🌗 **明暗主题**：跟随系统 + 手动切换
+- 📱 **响应式**：桌面 / 平板 / 手机三档自适应
 
 ## 目录结构
 
 ```
 .
-├── index.html          # 单页站点：导航 + 所有内容区块
+├── index.html          # 单页站点：导航 + 所有内容区块（含中英双语文案）
 ├── css/style.css       # 全部样式（明暗主题、响应式、动画）
-├── js/main.js          # 主题切换、导航、项目筛选、滚动动画、联系表单
+├── js/main.js          # 双语切换、主题切换、导航、筛选、动画、联系表单
 ├── assets/avatar.svg   # 头像 / 照片占位图（替换为你自己的照片）
 └── README.md
 ```
@@ -27,32 +31,38 @@ npx serve .
 
 ## 部署到 GitHub Pages
 
-1. 推送代码到 GitHub 仓库。
+1. 推送代码到 GitHub 仓库：`git push`
 2. 仓库 **Settings → Pages → Source** 选择 `Deploy from a branch`，分支选 `main`、目录选 `/ (root)`。
 3. 保存后等待一分钟，访问 `https://<用户名>.github.io/<仓库名>/`。
 
-## 如何填写你的资料
+## 双语机制（如何修改文案）
 
-所有需要替换的内容都在 `index.html` 中用统一注释标出，搜索 `【占位内容】` 即可逐个替换：
+所有文案直接写在 `index.html` 里，用三个属性维护两个语言版本：
 
-| 区块 | 位置（section id） | 需要提供 |
-| --- | --- | --- |
-| 首屏 Hero | `hero` | 姓名、身份一句话、自我介绍、城市 / 状态、核心数据 |
-| 关于我 | `about` | 详细介绍（2~3 段）、技能标签、常用工具 |
-| 项目成果 | `projects` | 每个项目的标题、简介、标签、链接（代码 / 论文 / 演示） |
-| 经历时间线 | `experience` | 教育 / 工作 / 里程碑经历 |
-| 兴趣 | `interests` | 兴趣爱好卡片 |
-| 合作 | `collab` | 合作方向、你能提供什么、期望的合作方式 |
-| 联系 | `contact` | 邮箱、GitHub、Google Scholar、LinkedIn、微信等 |
+```html
+<p data-en="English text" data-zh="中文文案">English text</p>
+```
 
-**提示**：
+- **`data-en`**：英文版文案（默认显示，HTML 标签内默认内容也写英文）
+- **`data-zh`**：中文版文案
+- 输入框占位符用 **`data-en-ph` / `data-zh-ph`**
+- 页面标题用 `<title data-en="..." data-zh="...">`，描述文案在 `js/main.js` 的 `META_DESC` 中
 
-- 头像/照片：把 `assets/avatar.svg` 替换为你自己的图片（如 `assets/avatar.jpg`），
-  并把 `index.html` 中所有 `assets/avatar.svg` 改成新文件名。
-- 项目卡片复制一块 `<article class="card">…</article>` 即可新增项目；
-  `data-cat` 决定它属于哪个筛选分类（`research` / `dev` / `other`），
-  分类按钮在 `.projects__filter` 中，可自行增删。
-- 联系表单默认通过 `mailto:` 打开邮件客户端；若需要真正的后端收件，
-  可将表单替换为 Formspree / Getform 等服务的地址。
-- 站点支持**明暗主题**（跟随系统 + 手动切换，记忆用户偏好）与移动端自适应，
-  无需额外配置。
+修改文案时**三个地方保持一致**（data-en、标签内默认内容、以及 data-zh）。新增元素只需加上这两个属性即可自动支持双语切换。
+
+## 内容来源
+
+站点内容综合自两份简历（`Personal Resume(YU HAITAO)-data engineer.docx`、
+`Personal Resume(YU HAITAO)—semicon.docx`），涵盖：
+
+| 区块 | 内容 |
+| --- | --- |
+| Hero | 姓名、身份、简介、核心数据 |
+| 关于我 | 履历综述、技能标签、工具箱 |
+| 项目与成果 | 半导体工艺项目、数据与 AI 项目、软件项目（支持分类筛选） |
+| 经历 | 工作经历时间线 + 教育背景时间线 |
+| 兴趣 | 兴趣爱好卡片 |
+| 合作 | 半导体工艺 / 数据与 AI / 咨询分享 三个合作方向 |
+| 联系 | 邮箱、电话、GitHub、所在地 + 留言表单（mailto） |
+
+**提示**：头像替换 `assets/avatar.svg`；联系信息在 `index.html` 联系区块和 `js/main.js` 的 `CONTACT_EMAIL` 中修改。

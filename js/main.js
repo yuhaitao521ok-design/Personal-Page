@@ -1,12 +1,13 @@
 /* ============================================================
    个人主页 · 交互脚本
-   主题切换 / 导航 / 项目筛选 / 滚动动画 / 联系表单
+   双语切换 / 主题切换 / 导航 / 项目筛选 / 滚动动画 / 联系表单
    ============================================================ */
 (function () {
   "use strict";
 
-  /* ---------- 明暗主题 ---------- */
   var root = document.documentElement;
+
+  /* ---------- 明暗主题 ---------- */
   var themeToggle = document.getElementById("themeToggle");
   var themeIcon = themeToggle ? themeToggle.querySelector(".theme-toggle__icon") : null;
 
@@ -22,7 +23,7 @@
     if (themeToggle) {
       themeToggle.setAttribute(
         "aria-label",
-        theme === "dark" ? "切换为浅色主题" : "切换为深色主题"
+        theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
       );
     }
   }
@@ -37,6 +38,50 @@
     });
   }
 
+  /* ---------- 中英双语切换（默认英文） ---------- */
+  var langToggle = document.getElementById("langToggle");
+  var metaDesc = document.getElementById("metaDesc");
+  var META_DESC = {
+    en: "YU HAITAO — Senior Research Engineer and data & AI practitioner. Projects, experience, interests and collaboration.",
+    zh: "YU HAITAO — 高级研究工程师、数据与 AI 实践者。项目成果、经历、兴趣与合作。"
+  };
+  var currentLang = "en";
+
+  function applyLang(lang) {
+    currentLang = lang;
+    root.setAttribute("lang", lang === "zh" ? "zh-CN" : "en");
+
+    var nodes = document.querySelectorAll("[data-en]");
+    for (var i = 0; i < nodes.length; i++) {
+      var text = nodes[i].getAttribute("data-" + lang);
+      if (text !== null) nodes[i].textContent = text;
+    }
+
+    var phNodes = document.querySelectorAll("[data-en-ph]");
+    for (var j = 0; j < phNodes.length; j++) {
+      var ph = phNodes[j].getAttribute("data-" + lang + "-ph");
+      if (ph !== null) phNodes[j].setAttribute("placeholder", ph);
+    }
+
+    if (metaDesc) metaDesc.setAttribute("content", META_DESC[lang]);
+
+    if (langToggle) {
+      langToggle.textContent = lang === "en" ? "中文" : "EN";
+      langToggle.setAttribute("aria-label", lang === "en" ? "切换中文" : "Switch to English");
+    }
+  }
+
+  var savedLang = localStorage.getItem("lang");
+  applyLang(savedLang === "zh" ? "zh" : "en");
+
+  if (langToggle) {
+    langToggle.addEventListener("click", function () {
+      var next = currentLang === "en" ? "zh" : "en";
+      localStorage.setItem("lang", next);
+      applyLang(next);
+    });
+  }
+
   /* ---------- 移动端导航 ---------- */
   var navToggle = document.getElementById("navToggle");
   var navLinks = document.getElementById("navLinks");
@@ -46,7 +91,6 @@
       var open = navLinks.classList.toggle("is-open");
       navToggle.classList.toggle("is-open", open);
       navToggle.setAttribute("aria-expanded", String(open));
-      navToggle.setAttribute("aria-label", open ? "关闭菜单" : "打开菜单");
     });
 
     navLinks.addEventListener("click", function (e) {
@@ -149,8 +193,7 @@
   }
 
   /* ---------- 联系表单（mailto） ---------- */
-  // 【占位内容】请把下面的邮箱替换为你的真实邮箱
-  var CONTACT_EMAIL = "yourname@example.com";
+  var CONTACT_EMAIL = "413168358@qq.com";
   var contactForm = document.getElementById("contactForm");
   var formNote = document.getElementById("formNote");
 
@@ -161,9 +204,11 @@
       var email = document.getElementById("fEmail").value.trim();
       var message = document.getElementById("fMsg").value.trim();
 
-      var subject = encodeURIComponent("【个人网站】来自 " + name + " 的留言");
+      var subject = encodeURIComponent(
+        (currentLang === "zh" ? "【个人网站】来自 " : "[Website] Message from ") + name
+      );
       var body = encodeURIComponent(
-        message + "\n\n—— 来自 " + name + "（" + email + "）"
+        message + "\n\n—— " + name + " (" + email + ")"
       );
 
       window.location.href =

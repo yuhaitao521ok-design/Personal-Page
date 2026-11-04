@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- 【占位内容】请替换为你的名字与简介 -->
-  <title>你的名字 · 个人主页</title>
-  <meta name="description" content="你的名字的个人主页 — 项目成果、兴趣爱好与合作交流。" />
-  <meta property="og:title" content="你的名字 · 个人主页" />
-  <meta property="og:description" content="项目成果、兴趣爱好与合作交流。" />
+  <title data-en="YU HAITAO · Personal Website" data-zh="YU HAITAO · 个人主页">YU HAITAO · Personal Website</title>
+  <meta id="metaDesc" name="description" content="YU HAITAO — Senior Research Engineer and data & AI practitioner. Projects, experience, interests and collaboration." />
+  <meta property="og:title" content="YU HAITAO · Personal Website" />
+  <meta property="og:description" content="Semiconductor process R&D, machine learning and software projects." />
   <meta property="og:type" content="website" />
   <link rel="icon" href="assets/avatar.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="css/style.css" />
@@ -17,21 +16,22 @@
   <header class="site-header" id="top">
     <nav class="nav container">
       <a class="nav__brand" href="#top">
-        <img class="nav__avatar" src="assets/avatar.svg" alt="头像" />
-        <span>你的名字</span>
+        <img class="nav__avatar" src="assets/avatar.svg" alt="avatar" />
+        <span>YU HAITAO</span>
       </a>
-      <button class="nav__toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+      <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav__links" id="navLinks">
-        <li><a href="#about">关于</a></li>
-        <li><a href="#projects">项目</a></li>
-        <li><a href="#experience">经历</a></li>
-        <li><a href="#interests">兴趣</a></li>
-        <li><a href="#collab">合作</a></li>
-        <li><a href="#contact">联系</a></li>
-        <li>
-          <button class="theme-toggle" id="themeToggle" aria-label="切换明暗主题">
+        <li><a href="#about" data-en="About" data-zh="关于">About</a></li>
+        <li><a href="#projects" data-en="Projects" data-zh="项目">Projects</a></li>
+        <li><a href="#experience" data-en="Experience" data-zh="经历">Experience</a></li>
+        <li><a href="#interests" data-en="Interests" data-zh="兴趣">Interests</a></li>
+        <li><a href="#collab" data-en="Collaboration" data-zh="合作">Collaboration</a></li>
+        <li><a href="#contact" data-en="Contact" data-zh="联系">Contact</a></li>
+        <li class="nav__tools">
+          <button class="lang-btn" id="langToggle" aria-label="切换中文">中文</button>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
             <span class="theme-toggle__icon" aria-hidden="true">🌙</span>
           </button>
         </li>
@@ -40,204 +40,212 @@
   </header>
 
   <main>
-    <!-- ============ Hero 首屏 ============ -->
+
+    <!-- ============ Hero ============ -->
     <section class="hero">
       <div class="container hero__inner">
         <div class="hero__text">
-          <p class="hero__hi">你好，我是</p>
-          <!-- 【占位内容】你的名字 -->
-          <h1 class="hero__name">你的名字</h1>
-          <!-- 【占位内容】一句话身份介绍，例如：研究员 / 工程师 / 创作者 -->
-          <p class="hero__title">研究者 · 工程师 · 终身学习者</p>
-          <!-- 【占位内容】2~3 句自我介绍 -->
-          <p class="hero__desc">
-            我专注于某某领域，热爱把想法变成真实可用的产品。
-            这里记录了我的项目成果、思考与兴趣，也欢迎随时与我交流、合作。
-          </p>
+          <p class="hero__hi" data-en="Hi, I'm" data-zh="你好，我是">Hi, I'm</p>
+          <h1 class="hero__name">YU HAITAO</h1>
+          <p class="hero__title" data-en="Senior Research Engineer · Data &amp; AI Practitioner" data-zh="高级研究工程师 · 数据与 AI 实践者">Senior Research Engineer · Data &amp; AI Practitioner</p>
+          <p class="hero__desc" data-en="Singapore-based engineer with 10+ years spanning semiconductor process R&amp;D and data-driven engineering. From etch process development at UMC and the Institute of Microelectronics to machine learning and full-stack side projects, I enjoy turning complex problems into elegant, working solutions." data-zh="常驻新加坡的工程师，拥有 10 余年半导体工艺研发与数据驱动工程经验。从 UMC 与微电子研究院的刻蚀工艺开发，到机器学习与全栈项目实践，我喜欢把复杂问题变成优雅、可用的解决方案。">Singapore-based engineer with 10+ years spanning semiconductor process R&amp;D and data-driven engineering.</p>
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#projects">查看项目</a>
-            <a class="btn btn--ghost" href="#contact">联系我</a>
+            <a class="btn btn--primary" href="#projects" data-en="View Projects" data-zh="查看项目">View Projects</a>
+            <a class="btn btn--ghost" href="#contact" data-en="Contact Me" data-zh="联系我">Contact Me</a>
           </div>
           <ul class="hero__meta">
-            <li>📍 某某城市</li>
-            <li>🟢 开放合作中</li>
-            <li>💬 中文 / English</li>
+            <li>📍 <span data-en="Singapore" data-zh="新加坡">Singapore</span></li>
+            <li>🟢 <span data-en="Open to collaboration" data-zh="开放合作中">Open to collaboration</span></li>
+            <li>💬 <span data-en="English / Chinese" data-zh="中文 / English">English / Chinese</span></li>
           </ul>
         </div>
         <div class="hero__card">
-          <img class="hero__photo" src="assets/avatar.svg" alt="个人照片" />
+          <img class="hero__photo" src="assets/avatar.svg" alt="portrait" />
           <div class="hero__card-body">
-            <p class="hero__card-quote">“把复杂的问题，做得简单而优雅。”</p>
-            <!-- 【占位内容】可放核心数据，如：论文 x 篇 / 项目 x 个 / 开源 star 数 -->
+            <p class="hero__card-quote" data-en="&ldquo;Make complex things simple and elegant.&rdquo;" data-zh="&ldquo;把复杂的问题，做得简单而优雅。&rdquo;">&ldquo;Make complex things simple and elegant.&rdquo;</p>
             <ul class="hero__stats">
-              <li><strong>12+</strong><span>项目</span></li>
-              <li><strong>5</strong><span>年经验</span></li>
-              <li><strong>30+</strong><span>合作者</span></li>
+              <li><strong>10+</strong><span data-en="Years of Experience" data-zh="工作年限">Years of Experience</span></li>
+              <li><strong>15+</strong><span data-en="Major Projects" data-zh="重点项目">Major Projects</span></li>
+              <li><strong>2</strong><span data-en="Working Languages" data-zh="工作语言">Working Languages</span></li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 关于我 ============ -->
+    <!-- ============ About ============ -->
     <section class="section" id="about">
       <div class="container">
         <header class="section__head">
-          <h2>关于我</h2>
-          <p>我的背景、专长与正在关注的方向</p>
+          <h2 data-en="About Me" data-zh="关于我">About Me</h2>
+          <p data-en="Background, expertise and what I'm focused on" data-zh="我的背景、专长与正在关注的方向">Background, expertise and what I'm focused on</p>
         </header>
         <div class="about__grid">
           <div class="about__text">
-            <!-- 【占位内容】详细的个人介绍，建议 2~3 段 -->
-            <p>
-              我是某某某，目前在某某机构从事某某方向的研究 / 工作。
-              我的兴趣集中在 A、B、C 等领域，喜欢从实际问题出发，
-              用跨学科的方法寻找优雅的解决方案。
-            </p>
-            <p>
-              过去几年里，我参与并主导了多个项目，从 0 到 1 打造过产品，
-              也在顶级会议 / 期刊上发表过成果。工作之外，我喜欢阅读、跑步和摄影。
-            </p>
-            <a class="btn btn--primary" href="#contact">和我聊聊 →</a>
+            <p data-en="I'm YU HAITAO, a Singaporean engineer with a decade of experience spanning semiconductor manufacturing and research. As an Etch Equipment Engineer at UMC Singapore I owned key etch platforms for L55Flash, RF55-SOI and logic products; as a Senior Research Engineer at the Institute of Microelectronics I advanced etching process development for next-generation packaging and photonics." data-zh="我是 YU HAITAO，一名新加坡工程师，拥有十年半导体制造与研发经验。在 UMC（新加坡）担任刻蚀设备工程师期间，我负责 L55Flash、RF55-SOI 与逻辑产品的关键刻蚀机台；在微电子研究院担任高级研究工程师期间，我推进了面向先进封装与光子学的刻蚀工艺开发。">I'm YU HAITAO, a Singaporean engineer with a decade of experience spanning semiconductor manufacturing and research.</p>
+            <p data-en="Along the way I earned a Master's in Computer Control and Automation from NTU and built a strong data &amp; AI skill set — from local RAG pipelines and LLM fine-tuning to computer vision and full-stack web apps. I love working across disciplines, learning fast, and turning ideas into real, usable products." data-zh="期间我在南洋理工大学取得计算机控制与自动化硕士学位，并积累了扎实的数据与 AI 技能——从本地 RAG 流水线、大模型微调，到计算机视觉与全栈 Web 应用。我喜欢跨领域协作、快速学习，并把想法变成真实可用的产品。">Along the way I earned a Master's in Computer Control and Automation from NTU and built a strong data &amp; AI skill set.</p>
+            <a class="btn btn--primary" href="#contact" data-en="Get in touch →" data-zh="和我聊聊 →">Get in touch →</a>
           </div>
           <div class="about__skills">
-            <h3>技能与专长</h3>
-            <!-- 【占位内容】替换为你的技能标签 -->
+            <h3 data-en="Expertise" data-zh="技能与专长">Expertise</h3>
             <div class="tags">
-              <span class="tag">机器学习</span>
-              <span class="tag">数据可视化</span>
-              <span class="tag">前端开发</span>
-              <span class="tag">系统设计</span>
-              <span class="tag">技术写作</span>
-              <span class="tag">项目管理</span>
-              <span class="tag">公开演讲</span>
-              <span class="tag">英语 / 中文</span>
+              <span class="tag" data-en="Semiconductor Process" data-zh="半导体工艺">Semiconductor Process</span>
+              <span class="tag" data-en="Data Analysis" data-zh="数据分析">Data Analysis</span>
+              <span class="tag" data-en="Machine Learning" data-zh="机器学习">Machine Learning</span>
+              <span class="tag" data-en="Deep Learning" data-zh="深度学习">Deep Learning</span>
+              <span class="tag" data-en="NLP &amp; LLM" data-zh="NLP 与大模型">NLP &amp; LLM</span>
+              <span class="tag" data-en="Computer Vision" data-zh="计算机视觉">Computer Vision</span>
+              <span class="tag" data-en="Full-stack Dev" data-zh="全栈开发">Full-stack Dev</span>
+              <span class="tag" data-en="Technical Reporting" data-zh="技术汇报">Technical Reporting</span>
             </div>
-            <h3>工具箱</h3>
+            <h3 data-en="Toolbox" data-zh="工具箱">Toolbox</h3>
             <div class="tags">
               <span class="tag tag--soft">Python</span>
-              <span class="tag tag--soft">TypeScript</span>
               <span class="tag tag--soft">PyTorch</span>
-              <span class="tag tag--soft">React</span>
-              <span class="tag tag--soft">Linux</span>
-              <span class="tag tag--soft">Git</span>
+              <span class="tag tag--soft">TensorFlow</span>
+              <span class="tag tag--soft">Pandas / NumPy</span>
+              <span class="tag tag--soft">LangChain / FAISS</span>
+              <span class="tag tag--soft">Hugging Face</span>
+              <span class="tag tag--soft">SQL</span>
+              <span class="tag tag--soft">React / Next.js</span>
+              <span class="tag tag--soft">TypeScript</span>
+              <span class="tag tag--soft">Docker</span>
+              <span class="tag tag--soft">Hadoop / Spark / Flink</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 项目与成果 ============ -->
+    <!-- ============ Projects ============ -->
     <section class="section section--alt" id="projects">
       <div class="container">
         <header class="section__head">
-          <h2>项目与成果</h2>
-          <p>精选项目、研究工作与开源作品</p>
+          <h2 data-en="Projects &amp; Achievements" data-zh="项目与成果">Projects &amp; Achievements</h2>
+          <p data-en="Selected work across semiconductors, data &amp; AI, and software" data-zh="半导体、数据与 AI、软件方向的精选成果">Selected work across semiconductors, data &amp; AI, and software</p>
         </header>
-        <div class="projects__filter" role="tablist" aria-label="项目分类">
-          <button class="chip is-active" data-filter="all">全部</button>
-          <button class="chip" data-filter="research">研究</button>
-          <button class="chip" data-filter="dev">开发</button>
-          <button class="chip" data-filter="other">其他</button>
+        <div class="projects__filter" role="tablist">
+          <button class="chip is-active" data-filter="all" data-en="All" data-zh="全部">All</button>
+          <button class="chip" data-filter="semicon" data-en="Semiconductor" data-zh="半导体">Semiconductor</button>
+          <button class="chip" data-filter="ai" data-en="Data &amp; AI" data-zh="数据与 AI">Data &amp; AI</button>
+          <button class="chip" data-filter="soft" data-en="Software" data-zh="软件开发">Software</button>
         </div>
         <div class="projects__grid" id="projectsGrid">
-          <!-- 【占位内容】复制整块 <article> 即可新增项目；data-cat 控制筛选分类 -->
-          <article class="card" data-cat="research">
+          <article class="card" data-cat="semicon">
             <div class="card__cover card__cover--1"></div>
             <div class="card__body">
-              <div class="card__meta"><span class="badge badge--research">研究</span><span>2025</span></div>
-              <h3>项目名称一</h3>
-              <p>一句话说明这个项目解决了什么问题、你的角色与核心贡献，突出成果与影响。</p>
+              <div class="card__meta"><span class="badge badge--research" data-en="Semiconductor" data-zh="半导体">Semiconductor</span><span>2021 — 2024</span></div>
+              <h3 data-en="Nano-TSV Etch for High-Speed HBM Memory" data-zh="面向高速 HBM 存储的纳米 TSV 刻蚀">Nano-TSV Etch for High-Speed HBM Memory</h3>
+              <p data-en="Developed nano-TSV etch processes for next-generation high-bandwidth memory and high aspect ratio TSV for layer interconnection at the Institute of Microelectronics." data-zh="在微电子研究院开发面向下一代高带宽存储的纳米 TSV 刻蚀工艺，以及用于层间互连的高深宽比 TSV 工艺。">Developed nano-TSV etch processes for next-generation high-bandwidth memory.</p>
               <div class="tags">
-                <span class="tag tag--soft">方向 A</span>
-                <span class="tag tag--soft">方法 B</span>
+                <span class="tag tag--soft">TSV</span>
+                <span class="tag tag--soft">HBM</span>
+                <span class="tag tag--soft">Plasma Etch</span>
               </div>
               <div class="card__links">
-                <a href="#" target="_blank" rel="noopener">论文 ↗</a>
-                <a href="#" target="_blank" rel="noopener">代码 ↗</a>
+                <a href="#contact" data-en="Discuss →" data-zh="了解详情 →">Discuss →</a>
               </div>
             </div>
           </article>
 
-          <article class="card" data-cat="dev">
+          <article class="card" data-cat="semicon">
             <div class="card__cover card__cover--2"></div>
             <div class="card__body">
-              <div class="card__meta"><span class="badge badge--dev">开发</span><span>2025</span></div>
-              <h3>项目名称二</h3>
-              <p>一句话说明这个产品 / 工具的功能、用户规模或技术亮点，量化成果更有说服力。</p>
+              <div class="card__meta"><span class="badge badge--research" data-en="Semiconductor" data-zh="半导体">Semiconductor</span><span>2021 — 2024</span></div>
+              <h3 data-en="Si/SiN Waveguide &amp; Nano-Imprint Mould" data-zh="硅/氮化硅波导与纳米压印模具工艺">Si/SiN Waveguide &amp; Nano-Imprint Mould</h3>
+              <p data-en="Process development of Si and SiN waveguides for high-speed transceivers, Si mould fabrication for nano-imprinting, and tri-layer mask etching for immersion lithography." data-zh="面向高速收发器的硅与氮化硅波导工艺开发、纳米压印硅模具制备，以及浸没式光刻三层掩模刻蚀工艺。">Process development of Si and SiN waveguides for high-speed transceivers.</p>
               <div class="tags">
-                <span class="tag tag--soft">TypeScript</span>
-                <span class="tag tag--soft">React</span>
+                <span class="tag tag--soft">Photonics</span>
+                <span class="tag tag--soft">Lithography</span>
+                <span class="tag tag--soft">Wafer Fabrication</span>
               </div>
               <div class="card__links">
-                <a href="#" target="_blank" rel="noopener">演示 ↗</a>
-                <a href="#" target="_blank" rel="noopener">代码 ↗</a>
+                <a href="#contact" data-en="Discuss →" data-zh="了解详情 →">Discuss →</a>
               </div>
             </div>
           </article>
 
-          <article class="card" data-cat="research">
+          <article class="card" data-cat="semicon">
             <div class="card__cover card__cover--3"></div>
             <div class="card__body">
-              <div class="card__meta"><span class="badge badge--research">研究</span><span>2024</span></div>
-              <h3>项目名称三</h3>
-              <p>一句话说明研究背景、方法与结论，或带来的实际影响（引用、落地、媒体报道等）。</p>
+              <div class="card__meta"><span class="badge badge--research" data-en="Semiconductor" data-zh="半导体">Semiconductor</span><span>2017 — 2021</span></div>
+              <h3 data-en="Etch Tool Yield &amp; Cost Projects at UMC" data-zh="UMC 刻蚀机台良率与成本改善项目">Etch Tool Yield &amp; Cost Projects at UMC</h3>
+              <p data-en="Owned Lam2300 (Kiyo/Kiyo45/Star), SEZ SP4300 and DV38 platforms. Delivered edge &amp; center defect improvement, OMM alarm reduction, dispenser redesign, auto PM implementation and idle-flush cost-down." data-zh="负责 Lam2300（Kiyo/Kiyo45/Star）、SEZ SP4300 与 DV38 机台。完成边缘与中心缺陷改善、OMM 报警率降低、分配器改设计、自动 PM 导入与待机清洗降本等项目。">Owned Lam2300, SEZ SP4300 and DV38 platforms with multiple yield and cost projects.</p>
               <div class="tags">
-                <span class="tag tag--soft">方向 C</span>
-                <span class="tag tag--soft">数据集</span>
+                <span class="tag tag--soft">Etch</span>
+                <span class="tag tag--soft">Yield</span>
+                <span class="tag tag--soft">Equipment</span>
               </div>
               <div class="card__links">
-                <a href="#" target="_blank" rel="noopener">论文 ↗</a>
-                <a href="#" target="_blank" rel="noopener">幻灯片 ↗</a>
+                <a href="#contact" data-en="Discuss →" data-zh="了解详情 →">Discuss →</a>
               </div>
             </div>
           </article>
-          <article class="card" data-cat="dev">
+
+          <article class="card" data-cat="ai">
             <div class="card__cover card__cover--4"></div>
             <div class="card__body">
-              <div class="card__meta"><span class="badge badge--dev">开发</span><span>2024</span></div>
-              <h3>项目名称四</h3>
-              <p>一句话说明项目定位、技术栈与你的贡献，可附上 star 数、用户数等指标。</p>
+              <div class="card__meta"><span class="badge badge--dev" data-en="Data &amp; AI" data-zh="数据与 AI">Data &amp; AI</span><span>2024</span></div>
+              <h3 data-en="Local RAG Knowledge Base" data-zh="本地 RAG 知识库">Local RAG Knowledge Base</h3>
+              <p data-en="Built a fully local retrieval-augmented generation knowledge base with LangChain and FAISS vector search, enabling private document Q&amp;A without cloud services." data-zh="基于 LangChain 与 FAISS 向量检索搭建全本地 RAG 知识库，无需云服务即可实现私有文档问答。">Built a fully local RAG knowledge base with LangChain and FAISS for private document Q&amp;A.</p>
               <div class="tags">
-                <span class="tag tag--soft">Python</span>
-                <span class="tag tag--soft">开源</span>
+                <span class="tag tag--soft">LangChain</span>
+                <span class="tag tag--soft">FAISS</span>
+                <span class="tag tag--soft">RAG</span>
               </div>
               <div class="card__links">
-                <a href="#" target="_blank" rel="noopener">代码 ↗</a>
-                <a href="#" target="_blank" rel="noopener">文档 ↗</a>
+                <a href="#contact" data-en="Discuss →" data-zh="了解详情 →">Discuss →</a>
               </div>
             </div>
           </article>
 
-          <article class="card" data-cat="other">
+          <article class="card" data-cat="ai">
             <div class="card__cover card__cover--5"></div>
             <div class="card__body">
-              <div class="card__meta"><span class="badge badge--other">其他</span><span>2023</span></div>
-              <h3>项目名称五</h3>
-              <p>写作、演讲、社区组织、志愿活动等任何你想展示的成果，都可以放在这里。</p>
+              <div class="card__meta"><span class="badge badge--dev" data-en="Data &amp; AI" data-zh="数据与 AI">Data &amp; AI</span><span>2024</span></div>
+              <h3 data-en="LLM Fine-tuning with QLoRA" data-zh="QLoRA 大模型微调">LLM Fine-tuning with QLoRA</h3>
+              <p data-en="Supervised fine-tuned Qwen2.5-0.5B with QLoRA and prompt engineering to improve conversational quality under limited compute." data-zh="使用 QLoRA 与提示工程对 Qwen2.5-0.5B 进行监督微调，在有限算力下提升对话质量。">Supervised fine-tuned Qwen2.5-0.5B with QLoRA and prompt engineering.</p>
               <div class="tags">
-                <span class="tag tag--soft">写作</span>
-                <span class="tag tag--soft">演讲</span>
+                <span class="tag tag--soft">QLoRA</span>
+                <span class="tag tag--soft">LLM</span>
+                <span class="tag tag--soft">PyTorch</span>
               </div>
               <div class="card__links">
-                <a href="#" target="_blank" rel="noopener">文章 ↗</a>
-                <a href="#" target="_blank" rel="noopener">视频 ↗</a>
+                <a href="#contact" data-en="Discuss →" data-zh="了解详情 →">Discuss →</a>
               </div>
             </div>
           </article>
 
-          <article class="card" data-cat="other">
+          <article class="card" data-cat="ai">
             <div class="card__cover card__cover--6"></div>
             <div class="card__body">
-              <div class="card__meta"><span class="badge badge--other">其他</span><span>2023</span></div>
-              <h3>项目名称六</h3>
-              <p>获奖、专利、媒体报道或任何值得展示的成果，一句话说明其价值与影响。</p>
+              <div class="card__meta"><span class="badge badge--dev" data-en="Data &amp; AI" data-zh="数据与 AI">Data &amp; AI</span><span>2024</span></div>
+              <h3 data-en="Real-time Object Detection" data-zh="实时目标检测系统">Real-time Object Detection</h3>
+              <p data-en="Real-time object detection pipeline combining YOLOv8 with OpenCV for live video inference." data-zh="结合 YOLOv8 与 OpenCV 的实时目标检测流水线，支持视频流在线推理。">Real-time object detection pipeline combining YOLOv8 with OpenCV for live video inference.</p>
               <div class="tags">
-                <span class="tag tag--soft">奖项</span>
-                <span class="tag tag--soft">专利</span>
+                <span class="tag tag--soft">YOLOv8</span>
+                <span class="tag tag--soft">OpenCV</span>
+                <span class="tag tag--soft">Computer Vision</span>
               </div>
               <div class="card__links">
-                <a href="#" target="_blank" rel="noopener">链接 ↗</a>
+                <a href="#contact" data-en="Discuss →" data-zh="了解详情 →">Discuss →</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" data-cat="soft">
+            <div class="card__cover card__cover--2"></div>
+            <div class="card__body">
+              <div class="card__meta"><span class="badge badge--other" data-en="Software" data-zh="软件开发">Software</span><span>2024</span></div>
+              <h3 data-en="Invoice Management Dashboard" data-zh="客户发票管理仪表盘">Invoice Management Dashboard</h3>
+              <p data-en="Developed a customer invoice dashboard website using Next.js for invoice management, tracking and visualization." data-zh="使用 Next.js 开发客户发票管理网站，支持发票管理、跟踪与可视化。">Developed a customer invoice dashboard website using Next.js.</p>
+              <div class="tags">
+                <span class="tag tag--soft">Next.js</span>
+                <span class="tag tag--soft">React</span>
+                <span class="tag tag--soft">TypeScript</span>
+              </div>
+              <div class="card__links">
+                <a href="#contact" data-en="Discuss →" data-zh="了解详情 →">Discuss →</a>
               </div>
             </div>
           </article>
@@ -245,188 +253,223 @@
       </div>
     </section>
 
-    <!-- ============ 经历时间线 ============ -->
+    <!-- ============ Experience ============ -->
     <section class="section" id="experience">
       <div class="container">
         <header class="section__head">
-          <h2>经历</h2>
-          <p>教育、工作与重要里程碑</p>
+          <h2 data-en="Experience" data-zh="经历">Experience</h2>
+          <p data-en="A decade of semiconductor engineering, research and education" data-zh="十年半导体工程、研发与教育经历">A decade of semiconductor engineering, research and education</p>
         </header>
-        <!-- 【占位内容】替换为你的真实经历，复制整块 <li> 即可新增 -->
+
+        <h3 class="timeline__sub" data-en="Working Experience" data-zh="工作经历">Working Experience</h3>
         <ol class="timeline">
           <li class="timeline__item">
             <div class="timeline__marker"></div>
             <div class="timeline__content">
               <div class="timeline__head">
-                <h3>某某大学 · 博士 / 硕士</h3>
-                <span class="timeline__date">2022 — 至今</span>
+                <h3 data-en="Senior Research Engineer" data-zh="高级研究工程师">Senior Research Engineer</h3>
+                <span class="timeline__date">2021/10 — 2024/12</span>
               </div>
-              <p class="timeline__org">某某专业 / 某某实验室</p>
-              <p>研究方向与主要成果概述，一两句话即可。</p>
+              <p class="timeline__org">Institute of Microelectronics (Singapore)</p>
+              <p data-en="Led etching process development across metal, dielectric, Si and mask materials. Highlights: tri-layer mask etching for immersion lithography; Si/SiN waveguides for high-speed transceivers; Si moulds for nano-imprinting; high aspect ratio and nano-TSV etch for high-speed HBM memory." data-zh="主导金属、介质、硅及掩模材料的刻蚀工艺开发。代表成果：浸没式光刻三层掩模刻蚀、高速收发器硅/氮化硅波导、纳米压印硅模具、高深宽比与纳米 TSV 刻蚀（面向高速 HBM 存储）。">Led etching process development across metal, dielectric, Si and mask materials.</p>
             </div>
           </li>
           <li class="timeline__item">
             <div class="timeline__marker"></div>
             <div class="timeline__content">
               <div class="timeline__head">
-                <h3>某某公司 · 软件工程师（实习 / 全职）</h3>
-                <span class="timeline__date">2021 — 2022</span>
+                <h3 data-en="Etch Equipment Engineer" data-zh="刻蚀设备工程师">Etch Equipment Engineer</h3>
+                <span class="timeline__date">2017/10 — 2021/01</span>
               </div>
-              <p class="timeline__org">某某团队 / 某某岗位</p>
-              <p>负责的内容与取得的成果，尽量量化。</p>
+              <p class="timeline__org">UMC (Singapore)</p>
+              <p data-en="Owned Lam2300 (Kiyo/Kiyo45/Star), Lam SEZ SP4300 and Lam DV38 platforms for L55Flash, RF55-SOI, logic, eCT40 and HV40 products. Delivered defect reduction, alarm-rate reduction, dispenser redesign, automated PM and cost-down projects." data-zh="负责 L55Flash、RF55-SOI、逻辑、eCT40、HV40 产品的 Lam2300（Kiyo/Kiyo45/Star）、Lam SEZ SP4300 与 Lam DV38 机台。完成缺陷改善、报警率降低、分配器改设计、自动 PM 与降本等项目。">Owned Lam2300, SEZ SP4300 and DV38 platforms for flash, RF-SOI and logic products.</p>
             </div>
           </li>
           <li class="timeline__item">
             <div class="timeline__marker"></div>
             <div class="timeline__content">
               <div class="timeline__head">
-                <h3>某某大学 · 学士</h3>
-                <span class="timeline__date">2017 — 2021</span>
+                <h3 data-en="Lab Technologist" data-zh="实验室技术员">Lab Technologist</h3>
+                <span class="timeline__date">2013/05 — 2017/05</span>
               </div>
-              <p class="timeline__org">某某专业</p>
-              <p>主修课程、荣誉或代表经历。</p>
+              <p class="timeline__org">Teknor Apex (Singapore)</p>
+              <p data-en="Raw material and finished goods characterization with DSC, gas chromatography, FTIR and TGA; injection moulding and mechanical testing including tensile, flexural and Izod impact tests." data-zh="使用 DSC、气相色谱、FTIR、TGA 进行原料与成品成分分析；注塑成型及拉伸、弯曲、悬臂梁冲击等力学性能测试。">Material characterization and mechanical testing for raw materials and finished goods.</p>
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="timeline__sub" data-en="Education" data-zh="教育背景">Education</h3>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <div class="timeline__head">
+                <h3 data-en="MSc, Computer Control and Automation" data-zh="计算机控制与自动化 硕士">MSc, Computer Control and Automation</h3>
+                <span class="timeline__date">2022/08 — 2024/05</span>
+              </div>
+              <p class="timeline__org">Nanyang Technological University (NTU-EEE)</p>
+              <p data-en="Core modules: Machine Vision, Video Signal Processing, Neural &amp; Fuzzy Systems, Natural Language Processing, Genetic Algorithms &amp; Machine Learning, Robotics and Intelligent Sensors, System Analysis." data-zh="核心课程：机器视觉、视频信号处理、神经网络与模糊系统、自然语言处理、遗传算法与机器学习、机器人与智能传感、系统分析。">Core modules: Machine Vision, NLP, Machine Learning, Robotics and Intelligent Sensors.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <div class="timeline__head">
+                <h3 data-en="BEng, Mechanical Engineering" data-zh="机械工程 学士">BEng, Mechanical Engineering</h3>
+                <span class="timeline__date">2013/08 — 2017/08</span>
+              </div>
+              <p class="timeline__org">Nanyang Technological University (NTU-MAE)</p>
+              <p data-en="Final-year project: designed a Virtual Reality application for vision improvement to help doctors better treat their patients." data-zh="毕业设计：开发用于视力改善的虚拟现实应用，辅助医生更好地治疗患者。">Final-year project: a VR application for vision improvement in medical treatment.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <div class="timeline__head">
+                <h3 data-en="Diploma, Manufacturing Engineering" data-zh="制造工程 文凭">Diploma, Manufacturing Engineering</h3>
+                <span class="timeline__date">2010/04 — 2013/03</span>
+              </div>
+              <p class="timeline__org">Nanyang Polytechnic</p>
+              <p data-en="Final-year project: design and development of an Android app for monitoring combat missions." data-zh="毕业设计：设计开发用于监控作战任务的 Android 应用。">Final-year project: an Android app for monitoring combat missions.</p>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- ============ 兴趣 ============ -->
+    <!-- ============ Interests ============ -->
     <section class="section section--alt" id="interests">
       <div class="container">
         <header class="section__head">
-          <h2>兴趣</h2>
-          <p>工作之外，让我保持热情的事情</p>
+          <h2 data-en="Interests" data-zh="兴趣">Interests</h2>
+          <p data-en="What keeps me curious outside of work" data-zh="工作之外，让我保持热情的事情">What keeps me curious outside of work</p>
         </header>
-        <!-- 【占位内容】替换为你的兴趣爱好，复制整块 <article> 即可新增 -->
         <div class="interests__grid">
           <article class="interest reveal">
             <div class="interest__icon">📚</div>
-            <h3>阅读</h3>
-            <p>喜欢历史、科幻与科普类书籍，最近在读《某某书》。</p>
+            <h3 data-en="Reading" data-zh="阅读">Reading</h3>
+            <p data-en="History, science fiction and popular science books." data-zh="喜欢历史、科幻与科普类书籍。">History, science fiction and popular science books.</p>
           </article>
           <article class="interest reveal">
             <div class="interest__icon">🏃</div>
-            <h3>跑步</h3>
-            <p>每周坚持跑步，完成过半程马拉松，享受配速与思考的平衡。</p>
+            <h3 data-en="Running" data-zh="跑步">Running</h3>
+            <p data-en="Keeping a weekly running routine and enjoying the balance of pace and thought." data-zh="每周坚持跑步，享受配速与思考的平衡。">Keeping a weekly running routine and enjoying the balance of pace and thought.</p>
           </article>
           <article class="interest reveal">
             <div class="interest__icon">📷</div>
-            <h3>摄影</h3>
-            <p>用镜头记录城市与自然，偏爱街头与风光题材。</p>
+            <h3 data-en="Photography" data-zh="摄影">Photography</h3>
+            <p data-en="Capturing cities and nature, with a soft spot for street and landscape." data-zh="用镜头记录城市与自然，偏爱街头与风光题材。">Capturing cities and nature, with a soft spot for street and landscape.</p>
           </article>
           <article class="interest reveal">
             <div class="interest__icon">🎸</div>
-            <h3>音乐</h3>
-            <p>业余吉他爱好者，也喜欢去 Livehouse 听现场。</p>
+            <h3 data-en="Music" data-zh="音乐">Music</h3>
+            <p data-en="Amateur guitar player and a fan of live music." data-zh="业余吉他爱好者，也喜欢去 Livehouse 听现场。">Amateur guitar player and a fan of live music.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ============ 合作 ============ -->
+    <!-- ============ Collaboration ============ -->
     <section class="section" id="collab">
       <div class="container">
         <header class="section__head">
-          <h2>合作</h2>
-          <p>我期待的合作方式与可以提供的价值</p>
+          <h2 data-en="Collaboration" data-zh="合作">Collaboration</h2>
+          <p data-en="How we can work together and the value I bring" data-zh="我期待的合作方式与可以提供的价值">How we can work together and the value I bring</p>
         </header>
         <div class="collab__grid">
-          <!-- 【占位内容】替换为你的合作方向 -->
           <article class="collab__item reveal">
             <div class="collab__num">01</div>
-            <h3>研究合作</h3>
-            <p>欢迎围绕共同感兴趣的方向开展研究、论文合作或学术交流。</p>
+            <h3 data-en="Semiconductor Process &amp; Yield" data-zh="半导体工艺与良率">Semiconductor Process &amp; Yield</h3>
+            <p data-en="Etch process development, defect improvement and equipment projects — from lab exploration to high-volume manufacturing." data-zh="刻蚀工艺开发、缺陷改善与设备项目——从实验室探索到量产导入。">Etch process development, defect improvement and equipment projects.</p>
           </article>
           <article class="collab__item reveal">
             <div class="collab__num">02</div>
-            <h3>项目与产品</h3>
-            <p>从技术选型到落地实现，可以一起打造有意思、有价值的产品。</p>
+            <h3 data-en="Data &amp; AI Solutions" data-zh="数据与 AI 解决方案">Data &amp; AI Solutions</h3>
+            <p data-en="RAG pipelines, LLM fine-tuning, computer vision and data dashboards that turn your data into working products." data-zh="RAG 流水线、大模型微调、计算机视觉与数据仪表盘，把数据变成可用的产品。">RAG pipelines, LLM fine-tuning, computer vision and data dashboards.</p>
           </article>
           <article class="collab__item reveal">
             <div class="collab__num">03</div>
-            <h3>分享与咨询</h3>
-            <p>讲座、工作坊、技术咨询，或只是约一次咖啡聊聊想法，都欢迎。</p>
+            <h3 data-en="Consulting &amp; Talks" data-zh="咨询与分享">Consulting &amp; Talks</h3>
+            <p data-en="Technical consulting, workshops, or simply a coffee chat about ideas — always happy to connect." data-zh="技术咨询、工作坊，或只是约一次咖啡聊聊想法，都欢迎。">Technical consulting, workshops, or simply a coffee chat about ideas.</p>
           </article>
         </div>
         <div class="collab__cta reveal">
-          <p>有想法？把它变成现实。</p>
-          <a class="btn btn--primary" href="#contact">发起合作 →</a>
+          <p data-en="Have an idea? Let's make it real." data-zh="有想法？把它变成现实。">Have an idea? Let's make it real.</p>
+          <a class="btn btn--primary" href="#contact" data-en="Start a conversation →" data-zh="发起合作 →">Start a conversation →</a>
         </div>
       </div>
     </section>
 
-    <!-- ============ 联系 ============ -->
+    <!-- ============ Contact ============ -->
     <section class="section section--alt" id="contact">
       <div class="container">
         <header class="section__head">
-          <h2>联系我</h2>
-          <p>欢迎通过以下方式找到我</p>
+          <h2 data-en="Get in Touch" data-zh="联系我">Get in Touch</h2>
+          <p data-en="Feel free to reach out through any of these channels" data-zh="欢迎通过以下方式找到我">Feel free to reach out through any of these channels</p>
         </header>
         <div class="contact__grid">
           <div class="contact__info">
-            <!-- 【占位内容】替换为你的联系方式与社交链接 -->
             <ul class="contact__list">
               <li>
                 <span class="contact__icon">✉️</span>
                 <div>
-                  <strong>邮箱</strong>
-                  <a href="mailto:yourname@example.com">yourname@example.com</a>
+                  <strong data-en="Email" data-zh="邮箱">Email</strong>
+                  <a href="mailto:413168358@qq.com">413168358@qq.com</a>
+                </div>
+              </li>
+              <li>
+                <span class="contact__icon">📱</span>
+                <div>
+                  <strong data-en="Phone" data-zh="电话">Phone</strong>
+                  <a href="tel:+6598902359">+65 9890 2359</a>
                 </div>
               </li>
               <li>
                 <span class="contact__icon">🐙</span>
                 <div>
                   <strong>GitHub</strong>
-                  <a href="https://github.com/yourname" target="_blank" rel="noopener">github.com/yourname</a>
+                  <a href="https://github.com/yuhaitao521ok-design" target="_blank" rel="noopener">github.com/yuhaitao521ok-design</a>
                 </div>
               </li>
               <li>
-                <span class="contact__icon">🎓</span>
+                <span class="contact__icon">📍</span>
                 <div>
-                  <strong>Google Scholar</strong>
-                  <a href="#" target="_blank" rel="noopener">个人学术主页</a>
-                </div>
-              </li>
-              <li>
-                <span class="contact__icon">💼</span>
-                <div>
-                  <strong>LinkedIn / 微信</strong>
-                  <span>yourname / your-wechat-id</span>
+                  <strong data-en="Location" data-zh="所在地">Location</strong>
+                  <span data-en="Singapore" data-zh="新加坡">Singapore</span>
                 </div>
               </li>
             </ul>
           </div>
           <form class="contact__form" id="contactForm">
             <div class="form__row">
-              <label for="fName">你的名字</label>
-              <input id="fName" name="name" type="text" placeholder="怎么称呼你？" required />
+              <label for="fName" data-en="Your name" data-zh="你的名字">Your name</label>
+              <input id="fName" name="name" type="text" data-en-ph="How should I call you?" data-zh-ph="怎么称呼你？" placeholder="How should I call you?" required />
             </div>
             <div class="form__row">
-              <label for="fEmail">你的邮箱</label>
-              <input id="fEmail" name="email" type="email" placeholder="you@example.com" required />
+              <label for="fEmail" data-en="Your email" data-zh="你的邮箱">Your email</label>
+              <input id="fEmail" name="email" type="email" data-en-ph="you@example.com" data-zh-ph="you@example.com" placeholder="you@example.com" required />
             </div>
             <div class="form__row">
-              <label for="fMsg">留言</label>
-              <textarea id="fMsg" name="message" rows="5" placeholder="想聊些什么？" required></textarea>
+              <label for="fMsg" data-en="Message" data-zh="留言">Message</label>
+              <textarea id="fMsg" name="message" rows="5" data-en-ph="What would you like to talk about?" data-zh-ph="想聊些什么？" placeholder="What would you like to talk about?" required></textarea>
             </div>
-            <button class="btn btn--primary" type="submit">发送消息</button>
-            <p class="form__note" id="formNote" hidden>已为你打开邮件客户端，如未弹出请直接发邮件给我。</p>
+            <button class="btn btn--primary" type="submit" data-en="Send Message" data-zh="发送消息">Send Message</button>
+            <p class="form__note" id="formNote" hidden data-en="Your email client has been opened. If nothing happened, please email me directly." data-zh="已为你打开邮件客户端，如未弹出请直接发邮件给我。">Your email client has been opened.</p>
           </form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ============ 页脚 ============ -->
+  <!-- ============ Footer ============ -->
   <footer class="site-footer">
     <div class="container footer__inner">
-      <p>© <span id="year">2026</span> 你的名字 · 用 ❤️ 与代码构建</p>
-      <a class="footer__top" href="#top">回到顶部 ↑</a>
+      <p>© <span id="year">2026</span> YU HAITAO · <span data-en="Built with ❤️ and code" data-zh="用 ❤️ 与代码构建">Built with ❤️ and code</span></p>
+      <a class="footer__top" href="#top" data-en="Back to top ↑" data-zh="回到顶部 ↑">Back to top ↑</a>
     </div>
   </footer>
 
-  <button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+  <button class="to-top" id="toTop" aria-label="Back to top">↑</button>
 
   <script src="js/main.js"></script>
 </body>
