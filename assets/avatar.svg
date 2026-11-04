@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4f61e0"/>
+      <stop offset="1" stop-color="#8a63d2"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="240" fill="url(#bg)"/>
+  <!-- 【占位内容】请替换 assets/avatar.svg 为你自己的照片 -->
+  <circle cx="120" cy="96" r="42" fill="#ffffff" opacity="0.92"/>
+  <path d="M48 210c6-44 34-68 72-68s66 24 72 68z" fill="#ffffff" opacity="0.92"/>
+  <text x="120" y="232" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#ffffff" opacity="0.75">替换为你的照片</text>
+</svg>
