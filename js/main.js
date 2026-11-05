@@ -202,7 +202,7 @@
   }
 
   /* ---------- 联系表单（mailto） ---------- */
-  var CONTACT_EMAIL = "413168358@qq.com";
+  var CONTACT_EMAIL = "413168358@qq.com,yuhaitao521ok@gmail.com";
   var contactForm = document.getElementById("contactForm");
   var formNote = document.getElementById("formNote");
 
