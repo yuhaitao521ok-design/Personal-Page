@@ -121,8 +121,17 @@
     });
   }
 
+  /* ---------- 页脚 / 品牌的“回到顶部”链接 ---------- */
+  var topLinks = document.querySelectorAll('a[href="#top"]');
+  for (var ti = 0; ti < topLinks.length; ti++) {
+    topLinks[ti].addEventListener("click", function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   /* ---------- 导航高亮当前区块 ---------- */
-  var sectionIds = ["about", "projects", "experience", "interests", "collab", "contact"];
+  var sectionIds = ["about", "projects", "publications", "experience", "interests", "collab", "contact"];
   var linkById = {};
 
   sectionIds.forEach(function (id) {
