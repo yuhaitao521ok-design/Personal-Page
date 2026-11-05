@@ -43,7 +43,7 @@
   var metaDesc = document.getElementById("metaDesc");
   var META_DESC = {
     en: "YU HAITAO — Senior Research Engineer and data & AI practitioner. Projects, experience, interests and collaboration.",
-    zh: "YU HAITAO — 高级研究工程师、数据与 AI 实践者。项目成果、经历、兴趣与合作。"
+    zh: "于海涛（YU HAITAO）— 高级研究工程师、数据与 AI 实践者。项目成果、经历、兴趣与合作。"
   };
   var currentLang = "en";
 
