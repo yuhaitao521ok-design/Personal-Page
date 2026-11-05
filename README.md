@@ -66,3 +66,13 @@ npx serve .
 | 联系 | 邮箱、电话、GitHub、所在地 + 留言表单（mailto） |
 
 **提示**：头像替换 `assets/avatar.svg`；联系信息在 `index.html` 联系区块和 `js/main.js` 的 `CONTACT_EMAIL` 中修改。
+
+## 任务与协作流程（Issue → PR）
+
+本仓库采用标准协作流程管理改动：
+
+1. **提任务**：在 [Issues](../../issues) 用「任务 / Task」模板新建 Issue（写清任务描述与验收标准）；
+2. **开发**：从 `main` 拉出功能分支（如 `feat/xxx` / `fix/xxx`），在分支上完成改动与验证；
+3. **提 PR**：推送分支并创建 Pull Request，正文用 `Closes #Issue号` 关联任务；
+4. **审查合并**：在 PR 页面审查 diff，合并到 `main` 后自动部署上线（GitHub Pages）；
+5. **关任务**：PR 合并时对应 Issue 自动关闭。
