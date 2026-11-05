@@ -1,0 +1,42 @@
+name: 任务 / Task
+description: 提交一个个人网站改动任务
+title: "[Task] "
+labels: ["task"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: 任务描述
+      description: 想改什么？尽量具体到页面区块或文件
+      placeholder: "例如：把联系区的电话号码改成可点击的 tel 链接"
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 验收标准
+      description: 怎样算完成？
+      placeholder: |
+        例如：
+        - 中英双语都要有
+        - 部署后线上可见
+    validations:
+      required: false
+  - type: dropdown
+    id: bilingual
+    attributes:
+      label: 是否需要中英双语
+      options:
+        - "是（默认）"
+        - "否"
+    validations:
+      required: true
+  - type: dropdown
+    id: deploy_check
+    attributes:
+      label: 完成后是否需要验证线上部署
+      options:
+        - "是（默认）"
+        - "否"
+    validations:
+      required: true
