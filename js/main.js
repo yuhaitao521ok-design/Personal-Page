@@ -87,18 +87,46 @@
   var navLinks = document.getElementById("navLinks");
 
   if (navToggle && navLinks) {
+    var navBackdrop = document.getElementById("navBackdrop");
+
+    function openNav() {
+      navLinks.classList.add("is-open");
+      navToggle.classList.add("is-open");
+      navToggle.setAttribute("aria-expanded", "true");
+      if (navBackdrop) navBackdrop.classList.add("is-open");
+    }
+
+    function closeNav() {
+      navLinks.classList.remove("is-open");
+      navToggle.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      if (navBackdrop) navBackdrop.classList.remove("is-open");
+    }
+
     navToggle.addEventListener("click", function () {
-      var open = navLinks.classList.toggle("is-open");
-      navToggle.classList.toggle("is-open", open);
-      navToggle.setAttribute("aria-expanded", String(open));
+      if (navLinks.classList.contains("is-open")) closeNav();
+      else openNav();
     });
 
     navLinks.addEventListener("click", function (e) {
-      if (e.target.tagName === "A") {
-        navLinks.classList.remove("is-open");
-        navToggle.classList.remove("is-open");
-        navToggle.setAttribute("aria-expanded", "false");
-      }
+      if (e.target.tagName === "A") closeNav();
+    });
+
+    // 点击菜单 / 汉堡按钮以外的区域（遮罩或页面空白处）即关闭菜单
+    document.addEventListener("click", function (e) {
+      if (!navLinks.classList.contains("is-open")) return;
+      if (navLinks.contains(e.target) || navToggle.contains(e.target)) return;
+      closeNav();
+    });
+
+    // 按 Esc 关闭菜单
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && navLinks.classList.contains("is-open")) closeNav();
+    });
+
+    // 窗口放大到桌面宽度时自动收起移动端菜单
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 720 && navLinks.classList.contains("is-open")) closeNav();
     });
   }
 

@@ -14,7 +14,10 @@
 ├── index.html          # 单页站点：导航 + 所有内容区块（含中英双语文案）
 ├── css/style.css       # 全部样式（明暗主题、响应式、动画）
 ├── js/main.js          # 双语切换、主题切换、导航、筛选、动画、联系表单
-├── assets/avatar.svg   # 头像 / 照片占位图（替换为你自己的照片）
+├── assets/avatar.jpg   # 头像（导航栏 / favicon，照片方形裁剪）
+├── assets/profile.jpg  # 个人照片（Hero 卡片）
+├── assets/qr-site.svg  # 网站二维码
+├── assets/qr-github.svg # GitHub 二维码
 └── README.md
 ```
 
@@ -63,9 +66,9 @@ npx serve .
 | 经历 | 工作经历时间线 + 教育背景时间线 |
 | 兴趣 | 兴趣爱好卡片 |
 | 合作 | 半导体工艺 / 数据与 AI / 咨询分享 三个合作方向 |
-| 联系 | 邮箱、电话、GitHub、所在地 + 留言表单（mailto） |
+| 联系 | 邮箱、电话、GitHub、LinkedIn、所在地 + 留言表单（mailto） |
 
-**提示**：头像替换 `assets/avatar.svg`；联系信息在 `index.html` 联系区块和 `js/main.js` 的 `CONTACT_EMAIL` 中修改。
+**提示**：头像与照片替换 `assets/avatar.jpg` / `assets/profile.jpg`；联系信息在 `index.html` 联系区块和 `js/main.js` 的 `CONTACT_EMAIL` 中修改。
 
 ## 任务与协作流程（Issue → PR）
 
