@@ -159,7 +159,7 @@
   }
 
   /* ---------- 导航高亮当前区块 ---------- */
-  var sectionIds = ["about", "projects", "publications", "experience", "interests", "collab", "contact"];
+  var sectionIds = ["about", "projects", "publications", "experience", "education", "interests", "collab", "contact"];
   var linkById = {};
 
   sectionIds.forEach(function (id) {
