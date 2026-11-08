@@ -130,6 +130,9 @@ p { margin: 0 0 1em; color: var(--text-soft); }
   box-shadow: var(--shadow);
 }
 
+/* 移动端菜单遮罩（默认隐藏，仅在移动端菜单展开时显示） */
+.nav__backdrop { display: none; }
+
 .nav {
   height: 100%;
   display: flex;
@@ -969,6 +972,22 @@ ol.timeline + .timeline__sub { margin-top: 52px; }
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+  }
+  .nav__backdrop {
+    display: block;
+    position: fixed;
+    inset: var(--header-h) 0 0;
+    z-index: 99;
+    background: rgba(15, 20, 32, 0.4);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+  }
+  .nav__backdrop.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
   .nav__links li { border-bottom: 1px solid var(--border); }
   .nav__links li:last-child { border-bottom: 0; padding-top: 12px; }
